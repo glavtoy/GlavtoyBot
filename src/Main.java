@@ -11,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
     public static void main(String[] args) throws SQLException {
-        SQLUtil sqlUtil = new SQLUtil("jdbc:postgresql://95.216.29.61/postgres", "postgres", "51699651Ng$T");
+        SQLUtil sqlUtil = new SQLUtil("jdbc:postgresql://0.0.0.0/postgres", "postgres", "12345678gg");
         UserBase.getInstance().load(sqlUtil);
         try {
-            TelegramBot bot = new TelegramBot("glavtoybot", "5954808309:AAFibSVX0u9GTMxu1svOi5amTHSszLZF6Wk");
+            TelegramBot bot = new TelegramBot("name", "token");
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(bot);
             new BussinessTask().startTask(TimeUnit.HOURS, 1);
